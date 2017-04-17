@@ -148,7 +148,7 @@ public class YouTubePlayerController implements
         if (isLoaded()) mYouTubePlayer.seekToMillis(second * 1000);
     }
 
-    public voic getCurrentTime() {
+    public int getCurrentTime() {
         return mYouTubePlayer.getCurrentTimeMillis() / 1000;
     }
 

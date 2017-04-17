@@ -19,8 +19,7 @@ public class YouTubeManager extends SimpleViewManager<YouTubeView> {
     private static final int COMMAND_NEXT_VIDEO = 2;
     private static final int COMMAND_PREVIOUS_VIDEO = 3;
     private static final int COMMAND_PLAY_VIDEO_AT = 4;
-    private static final int COMMAND_GET_CURRENT_TIME = 5;
-
+    
     @Override
     public String getName() {
         return "ReactYouTube";
@@ -41,9 +40,7 @@ public class YouTubeManager extends SimpleViewManager<YouTubeView> {
             "previousVideo",
             COMMAND_PREVIOUS_VIDEO,
             "playVideoAt",
-            COMMAND_PLAY_VIDEO_AT,
-            "getCurrentTime",
-            COMMAND_GET_CURRENT_TIME
+            COMMAND_PLAY_VIDEO_AT
         );
     }
 
@@ -66,10 +63,6 @@ public class YouTubeManager extends SimpleViewManager<YouTubeView> {
             }
             case COMMAND_PLAY_VIDEO_AT: {
                 view.playVideoAt(args.getInt(0));
-                return;
-            }
-            case COMMAND_GET_CURRENT_TIME: {
-                view.getCurrentTime();
                 return;
             }
             default:
@@ -97,6 +90,10 @@ public class YouTubeManager extends SimpleViewManager<YouTubeView> {
 
     public int getVideosIndex(YouTubeView view) {
         return view.getVideosIndex();
+    }
+
+    public int getCurrentTime(YouTubeView view) {
+      return view.getCurrentTime();
     }
 
     @ReactProp(name = "apiKey")

@@ -114,11 +114,9 @@ export default class YouTube extends React.Component {
   }
 
   getCurrentTime() {
-    UIManager.dispatchViewManagerCommand(
-      ReactNative.findNodeHandle(this._nativeComponentRef),
-      UIManager.ReactYouTube.Commands.getCurrentTime,
-      [],
-    );
+    console.log("NativeModules", NativeModules)
+    console.log("RCTYouTube", RCTYouTube)
+    return NativeModules.YouTubeModule.getCurrentTime();
   }
 
   nextVideo() {
